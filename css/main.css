@@ -1,0 +1,74 @@
+body {
+	font-family: Century Gothic, sans-serif;
+	color: #000;
+}
+
+.header {
+	background-color: #3D5971;
+	text-align: center;
+}
+
+.header a, .header a:hover, .header a:active {
+	color: #F4F4F4;
+	display: inline-block;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 1.2em;
+}
+
+a {
+	color: #A4A551;
+}
+
+a:hover, a:active {
+	color: #A4A551;
+	text-decoration: none;
+}
+
+.logo {
+	color: #F4F4F4;
+	text-align: left;
+}
+
+.logo em {
+	display: block;
+	font-size: .9em;
+}
+
+.header a.active {
+	background-color: #062740;
+}
+
+.leader h1 {
+	display: inline-block;
+}
+
+.main {
+  	background-color: #FFF;
+}
+
+.wrapper {
+	background-color: #FFF;
+}
+
+@media (min-width: 500px) {
+	.main {
+		-moz-box-shadow: 0 0 5px #CCC;
+		-webkit-box-shadow: 0 0 5px #CCC;
+		box-shadow: 0 0 5px #CCC;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	}
+	.wrapper {
+		background-image: url(/img/bg-drop.png);
+		background-color: #F4F4F4;
+		padding: 30px;
+	}
+}
+
+footer {
+	padding: 40px 0;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-top: 1px solid #e5e5e5;
+}
