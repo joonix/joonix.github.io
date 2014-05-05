@@ -43,12 +43,33 @@ a:hover, a:active {
 	display: inline-block;
 }
 
+.leader img {
+	margin: 10px 0;
+}
+
 .main {
   	background-color: #FFF;
 }
 
 .wrapper {
 	background-color: #FFF;
+}
+
+/* Smaller widths on containers with wrapper to compensate for the frame padding */
+@media (min-width: 768px) {
+  .wrapper .container {
+    width: 690px;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper .container {
+    width: 870px;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper .container {
+    width: 1110px;
+  }
 }
 
 @media (min-width: 500px) {
