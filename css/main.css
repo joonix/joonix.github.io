@@ -39,6 +39,11 @@ a:hover, a:active {
 	background-color: #062740;
 }
 
+.leader {
+	float: left;
+	margin-bottom: 10px;
+}
+
 .leader h1 {
 	display: inline-block;
 }
@@ -47,12 +52,29 @@ a:hover, a:active {
 	margin: 10px 0;
 }
 
-.main {
-  	background-color: #FFF;
+.referer {
+	padding: 15px;
+}
+
+.referer .photo {
+	text-align: center;
+}
+
+.referer img {
+	margin: auto;
+}
+
+blockquote {
+	border-left: 5px solid #F3E0C5;
 }
 
 .wrapper {
 	background-color: #FFF;
+}
+
+.wrapper .container {
+  	background-color: #FFF;
+  	margin: 15px auto;
 }
 
 /* Smaller widths on containers with wrapper to compensate for the frame padding */
@@ -73,7 +95,7 @@ a:hover, a:active {
 }
 
 @media (min-width: 500px) {
-	.main {
+	.wrapper .container {
 		-moz-box-shadow: 0 0 5px #CCC;
 		-webkit-box-shadow: 0 0 5px #CCC;
 		box-shadow: 0 0 5px #CCC;
@@ -87,9 +109,9 @@ a:hover, a:active {
 	}
 }
 
-footer {
+body > footer {
 	padding: 40px 0;
 	text-align: center;
-	background-color: #f9f9f9;
-	border-top: 1px solid #e5e5e5;
+	background-color: #F9F9F9;
+	border-top: 1px solid #E5E5E5;
 }
