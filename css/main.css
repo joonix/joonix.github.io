@@ -40,12 +40,12 @@ a:hover, a:active {
 }
 
 .leader {
-	float: left;
 	margin-bottom: 10px;
 }
 
 .leader h1 {
 	display: inline-block;
+	font-size: 4em;
 }
 
 .leader img {
@@ -111,7 +111,38 @@ blockquote {
 
 body > footer {
 	padding: 40px 0;
-	text-align: center;
+	text-align: left;
 	background-color: #F9F9F9;
 	border-top: 1px solid #E5E5E5;
+}
+
+body > footer ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+body > footer ul.social li {
+	background-size: 30px auto;
+	line-height: 30px;
+	padding-left: 35px;
+}
+
+li.twitter {
+	background: url(/img/twitter.svg) no-repeat left center;
+}
+
+li.linkedin {
+	background: url(/img/linkedin.svg) no-repeat left center;
+}
+
+li.skype {
+	background: url(/img/skype.svg) no-repeat left center;
+}
+
+li.chat {
+	background: url(/img/chat.svg) no-repeat left center;
+}
+
+li.email {
+	background: url(/img/email.svg) no-repeat left center;
 }
