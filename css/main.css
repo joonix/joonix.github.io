@@ -8,7 +8,7 @@ body {
 	text-align: center;
 }
 
-.header a, .header a:hover, .header a:active {
+nav a, nav a:hover, nav a:active {
 	color: #F4F4F4;
 	display: inline-block;
 	cursor: pointer;
@@ -26,8 +26,22 @@ a:hover, a:active {
 }
 
 .logo {
+	font-family: 'Michroma', sans-serif;
+	font-variant: small-caps;
 	color: #F4F4F4;
 	text-align: left;
+	font-size: 30px;
+}
+
+@media (max-width: 768px) {
+	.logo {
+		text-align: center;
+	}
+}
+
+.logo .suffix {
+	display: inline-block;
+	color: #CCC;
 }
 
 .logo em {
@@ -39,9 +53,6 @@ a:hover, a:active {
 	background-color: #062740;
 }
 
-.leader {
-	margin-bottom: 10px;
-}
 
 .leader h1 {
 	display: inline-block;
@@ -49,7 +60,7 @@ a:hover, a:active {
 }
 
 .leader img {
-	margin: 10px 0;
+	margin: 10px auto;
 }
 
 .referer {
@@ -139,10 +150,18 @@ li.skype {
 	background: url(/img/skype.svg) no-repeat left center;
 }
 
+li.phone {
+	background: url(/img/phone.svg) no-repeat left center;
+}
+
 li.chat {
 	background: url(/img/chat.svg) no-repeat left center;
 }
 
 li.email {
 	background: url(/img/email.svg) no-repeat left center;
+}
+
+.amazon img.logo {
+	margin: 40px 0 0 40px;
 }

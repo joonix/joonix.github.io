@@ -6,142 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Joonix.SE</title>
 
+    <!-- Custom fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/main.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="js/app.js"></script>
-    <!-- script src="js/controllers.js"></script -->
-    <!-- script src="js/models.js"></script -->
+    <script src="js/controllers.js"></script>
+
   </head>
   <body>
     <div class="header">
       <div class="container">
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="logo">
-              Joonix.SE
-              <em>Unix på Svenska</em>
+              Joonix<div class="suffix">SE</div>
             </div>
+            <div class="clearfix"></div>
           </div>
-          <div class="col-sm-7">
-            <nav>
-              <a class="active">Hem</a>
-              <a>Tjänster</a>
-              <a>Offert</a>
-              <a>Blogg</a>
+          <div class="col-sm-4">
+            <nav ng-controller="NavCtrl">
+              <a ng-class="{active: active('/home')}" href="#/home">Hem</a>
+              <a ng-class="{active: active('/service')}" href="#/service">Tjänster</a>
+              <a ng-class="{active: active('/quote')}" href="#/quote">Offert</a>
             </nav>
           </div>
         </div>
       </div>
     </div>
     <div class="wrapper">
-      <div class="container">
-        <div class="leader row">
-          <div class="col-xs-9">
-            <h1>Hej! Vi kan det här med datorer!</h1>
-          </div>
-          <div class="col-xs-3">
-            <img src="/img/cpu-2.svg" class="img-responsive pull-right">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <p>
-              Behöver ditt företag hjälp med planering av er infrastruktur med Unix som plattform? Kanske driver ni en webbyrå men vill slippa tänka på hur en server fungerar? Behöver ni spara petabytes med data? Eller vill ni bara komma åt kontoret på distans? Vi hjälper till antingen vid behov eller för tillsvidare underhåll och support av systemet i sin helhet.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="leader row">
-          <div class="col-sm-9">
-            <h3>Om Joonix</h3>
-            <p>
-              Joonix grundades av mig, Johnny Bergström. Jag har över 7 år erfarenhet av arbete med framförallt att planera och driva infrastruktur med höga krav på tillgänglighet och snabba svarstider men också av många andra relaterade områden inom webbutveckling och serverdrift.
-            </p>
-            <p>
-              Några exempel på tidigare uppdrag:
-              <ul>
-                <li>Utveckla dynamiska tjänster för att hantera fler än 1,6 miljoner unika besökare i månaden.</li>
-                <li>Hantering av Amazon Web Services (EC2) med fler än 50 instanser i en komplicerad miljö.</li>
-                <li>Utveckla tjänst för chat i realtid via websocket från grunden.</li>
-                <li>Distribution av videomaterial via egenutvecklad torrent tracker.</li>
-                <li>Installera privat molntjänst baserad på Openstack.</li>
-                <li>Kösystem för konvertering till olika format av bild och video.</li>
-                <li>Formatera data från en databastyp till en annan i realtid via egenutvecklad klient.</li>
-                <li>Automation av serverinstallation för en viss roll inom infrastrukturen som helhet.</li>
-              </ul>
-            </p>
-          </div>
-          <div class="col-sm-3">
-            <img src="/img/johnny.jpg" class="img-responsive img-circle pull-right">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="referer row">
-          <div class="photo col-sm-3">
-            <img src="/img/hakan.jpg" class="img-circle img-responsive">
-          </div>
-          <div class="col-sm-9">
-            <blockquote>
-              <p>Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.</p>
-              <footer>
-                <a href="#">Håkan Malm</a>
-                <p>COO, Saltside Technologies AB</p>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-        <div class="referer row">
-          <div class="photo col-sm-3">
-            <img src="/img/gustav.jpg" class="img-circle img-responsive">
-          </div>
-          <div class="col-sm-9">
-            <blockquote>
-              <p>Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.</p>
-              <footer>
-                <a href="#">Gustav Perers</a>
-                <p>VD, Mobajl AB</p>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-        <div class="referer row">
-          <div class="photo col-sm-3">
-            <img src="/img/staffan.jpg" class="img-circle img-responsive">
-          </div>
-          <div class="col-sm-9">
-            <blockquote>
-              <p>Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.</p>
-              <footer>
-                <a href="#">Staffan Sundblad</a>
-                <p>CEO, Machinima Entertainment Sweden AB</p>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
+      <div ng-view></div>
     </div>
     <footer>
       <div class="container">
         <div class="row">
+          <div class="col-sm-offset-1 col-sm-3">
+            <h3>Kontakt</h3>
+            <ul ng-controller="SocialCtrl" class="social">
+              <li class="phone"><a ng-href="tel:{{phone}}">{{phone}}</a></li>
+              <li class="email"><a ng-href="mailto:{{mailto}}">{{mailto}}</a></li>
+              <li class="skype"><a ng-href="skype:{{skype}}">Skype</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/in/baloo">LinkedIn</a></li>
+              <li class="twitter"><a href="https://twitter.com/balboah">Twitter</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-offset-1 col-sm-3">
+            <h3>Innehar F-skatt</h3>
+            <ul>
+              <li>Danske Bank</li>
+              <li>Bankgiro 546-5141</li>
+            </ul>
+          </div>
           <div class="col-sm-offset-1 col-sm-3">
             <h3>Adress</h3>
             <ul class="adress">
@@ -149,23 +83,6 @@
               <li>Johnny Bergström</li>
               <li>Skonaren Ingos Gata 3</li>
               <li>417 60 Göteborg</li>
-            </ul>
-          </div>
-          <div class="col-sm-offset-1 col-sm-3">
-            <h3>Innehar F-skatt</h3>
-            <ul>
-              <li>Danske Bank</li>
-              <li>Bg 1234-56</li>
-            </ul>
-          </div>
-          <div class="col-sm-offset-1 col-sm-3">
-            <h3>Kontakt</h3>
-            <ul class="social">
-              <li class="email"><a href="{mailto}">{mailto}</a></li>
-              <li class="chat"><a href="#">Live Chat</a></li>
-              <li class="skype"><a href="skype:balboah?call">Skype</a></li>
-              <li class="linkedin"><a href="https://www.linkedin.com/in/baloo">LinkedIn</a></li>
-              <li class="twitter"><a href="https://twitter.com/balboah">Twitter</a></li>
             </ul>
           </div>
         </div>
