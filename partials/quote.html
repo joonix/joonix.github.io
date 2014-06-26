@@ -22,6 +22,10 @@
 					<input ng-model="quote.business" id="business" name="business" class="form-control" type="text" placeholder="Företagets namn">
 				</div>
 				<div class="form-group">
+					<label for="phone">Telefon</label>
+					<input ng-model="quote.phone" id="phone" name="phone" class="form-control" type="tel" placeholder="Telefonnummer som du kan nås på">
+				</div>
+				<div class="form-group">
 					<label for="email">E-post</label>
 					<input ng-model="quote.email" id="email" name="email" class="form-control" type="email" placeholder="Ange den e-post du bäst kan nås på" required>
 				</div>
@@ -29,7 +33,7 @@
 					<label for="message">Meddelande</label>
 					<textarea ng-model="quote.message" id="message" name="message" class="form-control" type="textarea" rows="10" placeholder="Beskriv vad du behöver hjälp med eller undrar över så utförligt som möjligt" required></textarea>
 				</div>
-				<button ng-disabled="quoteForm.$invalid" type="submit" class="btn btn-default">Skicka</button>
+				<button ng-click="send()" ng-disabled="quoteForm.$invalid" type="submit" class="btn btn-default">Skicka</button>
 			</form>
 		</div>
 	</div>

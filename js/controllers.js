@@ -1,14 +1,33 @@
 'use strict';
 
 angular.module('controllers', [])
+	.constant('apiUrl', 'http://localhost:3000')
 	.config(function($compileProvider) {
 		// Add skype to the default list of href protocols
 		$compileProvider.aHrefSanitizationWhitelist(
 			/^\s*(https?|ftp|mailto|tel|file|skype):/
 		);
 	})
-	.controller('QuoteCtrl', function($scope) {
-		$scope.quoteForm;
+	.controller('QuoteCtrl', function($scope, $log, $http, apiUrl) {
+		$scope.send = function() {
+			var message = "";
+			message += "Name: " + $scope.quote.name + "\n";
+			message += "Business: " + $scope.quote.business + "\n";
+			message += "Phone: " + $scope.quote.phone + "\n";
+			message += "------\n\n";
+			message += $scope.quote.message;
+
+			$http.post(apiUrl + "/message", {
+				from: $scope.quote.email,
+				message: message
+			})
+				.success(function() {
+					$log.info("It's a success!")
+				})
+				.error(function(msg) {
+					$log.info(msg);
+				});
+		}
 	})
 	.controller('NavCtrl', function($scope, $rootScope, $location) {
 		$scope.active = function(path) {
