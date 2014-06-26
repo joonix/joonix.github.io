@@ -25,28 +25,12 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
-.logo {
+.header .logo {
 	font-family: 'Michroma', sans-serif;
 	font-variant: small-caps;
 	color: #F4F4F4;
-	text-align: left;
-	font-size: 30px;
-}
-
-@media (max-width: 768px) {
-	.logo {
-		text-align: center;
-	}
-}
-
-.logo .suffix {
-	display: inline-block;
-	color: #CCC;
-}
-
-.logo em {
-	display: block;
-	font-size: .9em;
+	height: 42px;
+	margin: auto;
 }
 
 .header a.active {
