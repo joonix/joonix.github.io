@@ -25,6 +25,10 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
+.alert-danger a {
+	color: #FF0000;
+}
+
 .header .logo {
 	font-family: 'Michroma', sans-serif;
 	font-variant: small-caps;

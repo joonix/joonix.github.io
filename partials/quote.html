@@ -11,29 +11,46 @@
 		</div>
 	</div>
 	<div class="row">
+		<div ng-show="success" class="col-sm-12">
+		</div>
 		<div class="col-sm-12">
-			<form name="quoteForm" role="form" class="well" novalidate>
-				<div class="form-group">
+			<form name="quoteForm" ng-submit="send()" role="form" class="well" novalidate>
+				<div class="form-group has-feedback" ng-class="{'has-warning': !quote.name, 'has-success': quote.name}">
 					<label for="name">Kontaktperson</label>
 					<input ng-model="quote.name" id="name" name="name" class="form-control" type="text" placeholder="Ditt namn">
+					<span ng-class="{'glyphicon-warning-sign': !quote.name, 'glyphicon-ok': quote.name}" class="glyphicon form-control-feedback"></span>
 				</div>
-				<div class="form-group">
+				<div class="form-group has-feedback" ng-class="{'has-warning': !quote.business, 'has-success': quote.business}">
 					<label for="business">Företag</label>
 					<input ng-model="quote.business" id="business" name="business" class="form-control" type="text" placeholder="Företagets namn">
+					<span ng-class="{'glyphicon-warning-sign': !quote.business, 'glyphicon-ok': quote.business}" class="glyphicon form-control-feedback"></span>
 				</div>
-				<div class="form-group">
+				<div class="form-group has-feedback" ng-class="{'has-warning': !quote.phone, 'has-success': quote.phone}">
 					<label for="phone">Telefon</label>
 					<input ng-model="quote.phone" id="phone" name="phone" class="form-control" type="tel" placeholder="Telefonnummer som du kan nås på">
+					<span ng-class="{'glyphicon-warning-sign': !quote.phone, 'glyphicon-ok': quote.phone}" class="glyphicon form-control-feedback"></span>
 				</div>
-				<div class="form-group">
+				<div class="form-group has-feedback" ng-class="{'has-error': quoteForm.email.$invalid, 'has-success': quoteForm.email.$valid}">
 					<label for="email">E-post</label>
 					<input ng-model="quote.email" id="email" name="email" class="form-control" type="email" placeholder="Ange den e-post du bäst kan nås på" required>
+					<span ng-class="{'glyphicon-remove': quoteForm.email.$invalid, 'glyphicon-ok': quoteForm.email.$valid}" class="glyphicon form-control-feedback"></span>
 				</div>
-				<div class="form-group">
+				<div class="form-group has-feedback" ng-class="{'has-error': quoteForm.message.$invalid, 'has-success': quoteForm.message.$valid}">
 					<label for="message">Meddelande</label>
 					<textarea ng-model="quote.message" id="message" name="message" class="form-control" type="textarea" rows="10" placeholder="Beskriv vad du behöver hjälp med eller undrar över så utförligt som möjligt" required></textarea>
+					<span ng-class="{'glyphicon-remove': quoteForm.message.$invalid, 'glyphicon-ok': quoteForm.message.$valid}" class="glyphicon form-control-feedback"></span>
 				</div>
-				<button ng-click="send()" ng-disabled="quoteForm.$invalid" type="submit" class="btn btn-default">Skicka</button>
+				<div ng-show="error" class="alert alert-danger">
+					<strong>Tyvärr!</strong>
+					<p>
+						Ett <abbr title="{{error}}">oväntat fel</abbr> uppstod, vänligen försök igen eller maila meddelandet till <a ng-href="mailto:{{mailto}}">{{mailto}}</a>.
+					</p>
+				</div>
+				<div ng-show="success" class="alert alert-success">
+					<strong>Tack!</strong>
+					<p>Ditt meddelande har skickats och vi återkommer till dig så snart vi kan.</p>
+				</div>
+				<button ng-disabled="quoteForm.$invalid" type="submit" class="btn btn-default">Skicka</button>
 			</form>
 		</div>
 	</div>
