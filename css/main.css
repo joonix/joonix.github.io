@@ -8,12 +8,22 @@ body {
 	text-align: center;
 }
 
+nav {
+	float: right;
+}
+
 nav a, nav a:hover, nav a:active {
 	color: #F4F4F4;
 	display: inline-block;
 	cursor: pointer;
 	padding: 10px;
 	font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+	nav {
+		float: none;
+	}
 }
 
 a {
@@ -35,6 +45,13 @@ a:hover, a:active {
 	color: #F4F4F4;
 	height: 42px;
 	margin: auto;
+	float: left;
+}
+
+@media (max-width: 768px) {
+	.header .logo {
+		float: none;
+	}
 }
 
 .header a.active {
@@ -74,8 +91,12 @@ blockquote {
 .wrapper .container {
   	background-color: #FFF;
   	margin: 15px auto;
+  	padding: 20px;
 }
 
+.wrapper .container h1, .wrapper .container h2, .wrapper .container h3 {
+	margin-top: 10px;
+}
 /* Smaller widths on containers with wrapper to compensate for the frame padding */
 @media (min-width: 768px) {
   .wrapper .container {
