@@ -1,6 +1,28 @@
 'use strict';
 
-angular.module('joonix', ['ngRoute', 'controllers'])
+angular.module('joonix', ['ngRoute', 'angular-google-analytics', 'controllers'])
+	.config(function(AnalyticsProvider) {
+        // initial configuration
+        AnalyticsProvider.setAccount('UA-4028165-6');
+
+        // track all routes (or not)
+        AnalyticsProvider.trackPages(true);
+
+        // Use analytics.js instead of ga.js
+        AnalyticsProvider.useAnalytics(true);
+
+        // Ignore first page view... helpful when using hashes and whenever your bounce rate looks obscenely low.
+        AnalyticsProvider.ignoreFirstPageLoad(true);
+
+        // Enable enhanced link attribution
+        AnalyticsProvider.useEnhancedLinkAttribution(true);
+
+        // change page event name
+        AnalyticsProvider.setPageEvent('$routeChangeSuccess');
+    })
+    .run(function(Analytics) {
+      // For automatic page tracking, need to inject Analytics at least once
+    })
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/quote', {

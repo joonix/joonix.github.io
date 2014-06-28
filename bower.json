@@ -9,6 +9,7 @@
     "angular": "1.2.x",
     "bootstrap": "~3.1.1",
     "angular-route": "~1.2.15",
-    "angular-resource": "~1.2.15"
+    "angular-resource": "~1.2.15",
+    "angular-google-analytics": "~0.0.3"
   }
 }
