@@ -36,7 +36,7 @@ angular.module('joonix', ['ngRoute', 'angular-google-analytics', 'controllers'])
 			})
 			.otherwise({
 				redirectTo: '/home'
-			})
+			});
 	})
 	.config(function($compileProvider) {
 		// Add skype to the default list of href protocols
